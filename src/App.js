@@ -1,11 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router';
+import NavBar from './components/Navbar';
+import UsersPage from './components/UsersPage';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+      <NavBar />
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<UsersPage />}></Route>
+          <Route path="/users" element={<UsersPage />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
