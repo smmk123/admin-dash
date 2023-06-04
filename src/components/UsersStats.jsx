@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, Grid, Typography } from '@mui/material';
 import { fetchUserStats } from '../data/Users';
 import { AccountCircle, LockOpen, Timelapse, Error } from '@mui/icons-material';
+import UsersLoginChart from './UsersLoginChart';
 
 const UsersStats = () => {
   const [userStats, setUserStats] = useState(null);
@@ -21,7 +22,7 @@ const UsersStats = () => {
       </Grid>
       {userStats && (
         <>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} md={6} lg={6}>
             <Card sx={{ backgroundColor: '#FFC107' }}>
               <CardContent>
                 <AccountCircle />
@@ -39,7 +40,7 @@ const UsersStats = () => {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} md={6} lg={6}>
             <Card sx={{ backgroundColor: '#2196F3' }}>
               <CardContent>
                 <LockOpen />
@@ -54,10 +55,15 @@ const UsersStats = () => {
                 <Typography variant="body1" align="center">
                   {userStats.usersLoggingInToday}
                 </Typography>
+                <Card sx={{ backgroundColor: 'white', marginTop: '1rem' }}>
+                  <CardContent>
+                    <UsersLoginChart />
+                  </CardContent>
+                </Card>
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} md={6} lg={6}>
             <Card sx={{ backgroundColor: '#4CAF50' }}>
               <CardContent>
                 <Timelapse />
@@ -75,7 +81,7 @@ const UsersStats = () => {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} md={6} lg={6}>
             <Card sx={{ backgroundColor: '#F44336' }}>
               <CardContent>
                 <Error />
