@@ -33,6 +33,11 @@ const userLogins = [
   { date: '2023-08-01', count: 2 },
 ];
 
+const goodVsBadLogins = [
+  { name: 'Good Logins', value: 200 },
+  { name: 'Bad Logins', value: 20 },
+];
+
 export const fetchUsers = () => {
   return new Promise((resolve) => {
     resolve(userData);
@@ -48,5 +53,11 @@ export const fetchUserStats = () => {
 export const fetchUserLogins = () => {
   return new Promise((resolve) => {
     resolve(userLogins);
+  });
+};
+
+export const fetchGoodVsBadLogins = () => {
+  return new Promise((resolve) => {
+    resolve(goodVsBadLogins);
   });
 };

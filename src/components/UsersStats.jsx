@@ -4,6 +4,7 @@ import { fetchUserStats } from '../data/Users';
 import { AccountCircle, LockOpen, Timelapse, Error } from '@mui/icons-material';
 import UsersLoginChart from './UsersLoginChart';
 import { styled } from '@mui/system';
+import UsersGoodVsBadChart from './UsersGoodVsBadChart';
 
 const GradientCard = styled(Card)(({ theme, color }) => ({
   background: color,
@@ -98,6 +99,7 @@ const UsersStats = () => {
                 <Typography variant="body1" align="center">
                   {userStats.badLogins}
                 </Typography>
+                <UsersGoodVsBadChart />
               </CardContent>
             </GradientCard>
           </Grid>
