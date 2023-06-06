@@ -28,7 +28,7 @@ const UsersGoodVsBadChart = () => {
     });
   }, []);
 
-  const COLORS = ['#99ff66', '#ff0000'];
+  const COLORS = ['#DEFFB4', '#ff0000'];
 
   return (
     <>
@@ -47,33 +47,6 @@ const UsersGoodVsBadChart = () => {
                 cy="50%"
                 outerRadius={180}
                 labelLine={false}
-                label={({
-                  cx,
-                  cy,
-                  midAngle,
-                  innerRadius,
-                  outerRadius,
-                  value,
-                  index,
-                }) => {
-                  const RADIAN = Math.PI / 180;
-                  const radius =
-                    innerRadius + (outerRadius - innerRadius) * 0.5;
-                  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-                  return (
-                    <text
-                      x={x}
-                      y={y}
-                      fill="#ffffff"
-                      textAnchor={x > cx ? 'start' : 'end'}
-                      dominantBaseline="central"
-                    >
-                      {`${data[index].name} (${data[index].value})`}
-                    </text>
-                  );
-                }}
               >
                 <Cell key="cell-0" fill={COLORS[0]} />
                 <Cell key="cell-1" fill={COLORS[1]} />

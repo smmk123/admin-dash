@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {
-  AreaChart,
-  Area,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { fetchUserLogins } from '../data/Users';
+import { fetchUserTimeSpent } from '../data/Users';
 import { Typography, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -23,35 +23,33 @@ const useStyles = styled((theme) => ({
     marginBottom: theme.spacing(2),
     fontSize: '1.5rem',
   },
+  tooltip: {
+    color: '#000000',
+  },
 }));
 
-const UsersLoginChart = () => {
+const UsersTimeSpentChart = () => {
   const classes = useStyles();
-  const [userLogins, setUserLogins] = useState([]);
+  const [userTime, setUserTime] = useState([]);
 
   useEffect(() => {
-    fetchUserLogins().then((data) => {
-      setUserLogins(data);
+    fetchUserTimeSpent().then((data) => {
+      setUserTime(data);
     });
   }, []);
 
   return (
     <Box className={classes.chartContainer}>
       <Typography variant="h6" className={classes.chartTitle}>
-        Login History
+        Average Time Spent
       </Typography>
       <ResponsiveContainer width="100%" height={400}>
-        <AreaChart data={userLogins}>
-          <Area
-            type="monotone"
-            dataKey="count"
-            stroke="#ffffff"
-            strokeWidth={7}
-          />
-        </AreaChart>
+        <BarChart data={userTime}>
+          <Bar dataKey="count" fill="#ffffff" />
+        </BarChart>
       </ResponsiveContainer>
     </Box>
   );
 };
 
-export default UsersLoginChart;
+export default UsersTimeSpentChart;
