@@ -1,31 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from 'recharts';
+import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 import { fetchUserLogins } from '../data/Users';
 import { Typography, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
-const useStyles = styled((theme) => ({
-  chartContainer: {
-    backgroundColor: 'transparent',
-    borderRadius: theme.spacing(1),
-    boxShadow: theme.shadows[3],
-    padding: theme.spacing(2),
-    marginBottom: theme.spacing(4),
-  },
-  chartTitle: {
-    marginBottom: theme.spacing(2),
-    fontSize: '1.5rem',
-  },
-}));
-
 const UsersLoginChart = () => {
+  const useStyles = styled((theme) => ({
+    chartContainer: {
+      backgroundColor: 'transparent',
+      borderRadius: theme.spacing(1),
+      boxShadow: theme.shadows[3],
+      padding: theme.spacing(2),
+      marginBottom: theme.spacing(4),
+    },
+    chartTitle: {
+      marginBottom: theme.spacing(2),
+      fontSize: '1.5rem',
+    },
+  }));
   const classes = useStyles();
   const [userLogins, setUserLogins] = useState([]);
 
@@ -47,6 +39,7 @@ const UsersLoginChart = () => {
             dataKey="count"
             stroke="#ffffff"
             strokeWidth={7}
+            fill="transparent"
           />
         </AreaChart>
       </ResponsiveContainer>

@@ -6,6 +6,7 @@ import UsersLoginChart from './UsersLoginChart';
 import { styled } from '@mui/system';
 import UsersGoodVsBadChart from './UsersGoodVsBadChart';
 import UsersTimeSpentChart from './UserTimeSpent';
+import LatestUserDataTable from './UsersLatesetLogin';
 
 const GradientCard = styled(Card)(({ theme, color }) => ({
   background: color,
@@ -30,7 +31,7 @@ const UsersStats = () => {
       </Grid>
       {userStats && (
         <>
-          <Grid item xs={12} md={6} lg={6}>
+          <Grid item xs={12} md={6} lg={3}>
             <GradientCard color="linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)">
               <CardContent>
                 <AccountCircle />
@@ -40,15 +41,13 @@ const UsersStats = () => {
                   align="center"
                   gutterBottom
                 >
-                  Last User to Log In
+                  Users Logging In
                 </Typography>
-                <Typography variant="body1" align="center">
-                  {userStats.lastUserLogin}
-                </Typography>
+                <LatestUserDataTable />
               </CardContent>
             </GradientCard>
           </Grid>
-          <Grid item xs={12} md={6} lg={6}>
+          <Grid item xs={12} md={6} lg={3}>
             <GradientCard color="linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)">
               <CardContent>
                 <LockOpen />
@@ -67,7 +66,7 @@ const UsersStats = () => {
               </CardContent>
             </GradientCard>
           </Grid>
-          <Grid item xs={12} md={6} lg={6}>
+          <Grid item xs={12} md={6} lg={3}>
             <GradientCard color="linear-gradient(45deg, #4CAF50 30%, #8BC34A 90%)">
               <CardContent>
                 <Timelapse />
@@ -86,7 +85,7 @@ const UsersStats = () => {
               </CardContent>
             </GradientCard>
           </Grid>
-          <Grid item xs={12} md={6} lg={6}>
+          <Grid item xs={12} md={6} lg={3}>
             <GradientCard color="linear-gradient(45deg, #F44336 30%, #FF5252 90%)">
               <CardContent>
                 <Error />
