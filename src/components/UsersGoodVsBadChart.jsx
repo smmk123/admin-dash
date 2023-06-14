@@ -1,25 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Label } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { fetchGoodVsBadLogins } from '../data/Users';
-import { Typography, Box } from '@mui/material';
-import { styled } from '@mui/system';
-
-const useStyles = styled((theme) => ({
-  chartContainer: {
-    backgroundColor: 'transparent',
-    borderRadius: theme.spacing(1),
-    boxShadow: theme.shadows[3],
-    padding: theme.spacing(2),
-    marginBottom: theme.spacing(4),
-  },
-  chartTitle: {
-    marginBottom: theme.spacing(2),
-    fontSize: '1.5rem',
-  },
-}));
 
 const UsersGoodVsBadChart = () => {
-  const classes = useStyles();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -33,11 +16,9 @@ const UsersGoodVsBadChart = () => {
   return (
     <>
       {data && (
-        <Box className={classes.chartContainer}>
-          <Typography variant="h6" className={classes.chartTitle}>
-            Good Vs Bad Logins
-          </Typography>
-          <ResponsiveContainer width="100%" height={400}>
+        <div className="bg-transparent rounded shadow p-4 mb-8">
+          <h2 className="text-2xl font-bold mb-4">Good Vs Bad Logins</h2>
+          <ResponsiveContainer width="100%" height={200}>
             <PieChart>
               <Pie
                 data={data}
@@ -45,18 +26,20 @@ const UsersGoodVsBadChart = () => {
                 nameKey="name"
                 cx="50%"
                 cy="50%"
-                outerRadius={180}
+                outerRadius={100}
                 labelLine={false}
               >
-                <Cell key="cell-0" fill={COLORS[0]} />
-                <Cell key="cell-1" fill={COLORS[1]} />
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                ))}
               </Pie>
             </PieChart>
           </ResponsiveContainer>
-        </Box>
+        </div>
       )}
     </>
   );
 };
 
 export default UsersGoodVsBadChart;
+

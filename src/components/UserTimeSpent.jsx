@@ -8,28 +8,9 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { fetchUserTimeSpent } from '../data/Users';
-import { Typography, Box } from '@mui/material';
-import { styled } from '@mui/system';
-
-const useStyles = styled((theme) => ({
-  chartContainer: {
-    backgroundColor: 'transparent',
-    borderRadius: theme.spacing(1),
-    boxShadow: theme.shadows[3],
-    padding: theme.spacing(2),
-    marginBottom: theme.spacing(4),
-  },
-  chartTitle: {
-    marginBottom: theme.spacing(2),
-    fontSize: '1.5rem',
-  },
-  tooltip: {
-    color: '#000000',
-  },
-}));
+import { Typography } from '@mui/material';
 
 const UsersTimeSpentChart = () => {
-  const classes = useStyles();
   const [userTime, setUserTime] = useState([]);
 
   useEffect(() => {
@@ -39,16 +20,18 @@ const UsersTimeSpentChart = () => {
   }, []);
 
   return (
-    <Box className={classes.chartContainer}>
-      <Typography variant="h6" className={classes.chartTitle}>
+    <div className="bg-transparent rounded shadow-md p-4 mb-4">
+      <Typography variant="h6" className="mb-2 text-xl">
         Average Time Spent
       </Typography>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={userTime}>
-          <Bar dataKey="count" fill="#ffffff" />
-        </BarChart>
-      </ResponsiveContainer>
-    </Box>
+      <div style={{ width: '100%', height: 200 }}>
+        <ResponsiveContainer>
+          <BarChart data={userTime}>
+            <Bar dataKey="count" fill="#ffffff" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
   );
 };
 

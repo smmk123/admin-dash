@@ -7,7 +7,6 @@ import {
   TableCell,
   TableBody,
 } from '@mui/material';
-import { json } from 'react-router-dom';
 
 const LatestUserDataTable = () => {
   const [data, setData] = useState([]);
@@ -57,7 +56,7 @@ const LatestUserDataTable = () => {
   };
 
   useEffect(() => {
-    if (currentData.length > 5) {
+    if (currentData.length > 4) {
       setCurrentData([]);
     }
   }, [currentData]);

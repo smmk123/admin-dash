@@ -104,6 +104,25 @@ const UsersStats = () => {
               </CardContent>
             </GradientCard>
           </Grid>
+          <Grid item xs={12} md={6} lg={8}>
+            <GradientCard color="linear-gradient(45deg, #F44336 30%, #FF5252 90%)">
+              <CardContent>
+                <Error />
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  align="center"
+                  gutterBottom
+                >
+                  Bad Logins
+                </Typography>
+                <Typography variant="body1" align="center">
+                  {userStats.badLogins}
+                </Typography>
+                <UsersGoodVsBadChart />
+              </CardContent>
+            </GradientCard>
+          </Grid>
         </>
       )}
     </Grid>
