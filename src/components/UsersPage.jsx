@@ -21,7 +21,9 @@ const UsersPage = () => {
   }, []);
   return (
     <div className="container mx-auto my-4">
-      <span className="text-4xl text-center font-bold mb-4">Users (Click and Drag to customize)</span>
+      <span className="text-4xl text-center font-bold mb-4">
+        Users (Click and Drag to customize)
+      </span>
       <ResponsiveGridLayout
         className="layout"
         breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}

@@ -42,4 +42,3 @@ const UsersGoodVsBadChart = () => {
 };
 
 export default UsersGoodVsBadChart;
-
