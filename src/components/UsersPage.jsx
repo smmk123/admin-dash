@@ -6,7 +6,7 @@ import UsersGoodVsBadChart from './UsersGoodVsBadChart';
 import UsersTimeSpentChart from './UserTimeSpent';
 import LatestUserDataTable from './UsersLatesetLogin';
 import { Responsive, WidthProvider } from 'react-grid-layout';
-import { AccountCircle, LockOpen, Timelapse, Error } from '@mui/icons-material';
+import { LockOpen, Timelapse, Error } from '@mui/icons-material';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 
@@ -32,13 +32,9 @@ const UsersPage = () => {
       >
         <div
           key="latestUser"
-          data-grid={{ x: 0, y: 0, w: 3, h: 2 }}
+          data-grid={{ x: 0, y: 0, w: 3, h: 2, minH: 2, minW: 3 }}
           className="bg-gradient-to-br from-pink-500 to-orange-500 text-white rounded-lg p-4"
         >
-          <AccountCircle />
-          <h3 className="text-lg text-center font-medium mb-2">
-            Users Logging In
-          </h3>
           <LatestUserDataTable />
         </div>
         <div

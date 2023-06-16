@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchUsers } from '../data/Users';
-import {
-  Table,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
-} from '@mui/material';
+import { AccountCircle } from '@mui/icons-material';
 
 const LatestUserDataTable = () => {
   const [data, setData] = useState([]);
@@ -66,25 +60,28 @@ const LatestUserDataTable = () => {
   };
 
   return (
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>ID</TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>Email</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {currentData &&
-          currentData.map((user) => (
-            <TableRow key={user.id}>
-              <TableCell>{user.id}</TableCell>
-              <TableCell>{user.name}</TableCell>
-              <TableCell>{user.email}</TableCell>
-            </TableRow>
+    <>
+      <AccountCircle />
+      <h3 className="text-lg text-center font-medium mb-2">Users Logging In</h3>
+      <table className="w-full border-collapse">
+        <thead>
+          <tr>
+            <th className="py-2 px-4 border-b">ID</th>
+            <th className="py-2 px-4 border-b">Name</th>
+            <th className="py-2 px-4 border-b">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {currentData.map((user) => (
+            <tr key={user.id}>
+              <td className="py-2 px-4 border-b">{user.id}</td>
+              <td className="py-2 px-4 border-b">{user.name}</td>
+              <td className="py-2 px-4 border-b">{user.email}</td>
+            </tr>
           ))}
-      </TableBody>
-    </Table>
+        </tbody>
+      </table>
+    </>
   );
 };
 
