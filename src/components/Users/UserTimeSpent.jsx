@@ -7,7 +7,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { fetchUserTimeSpent } from '../data/Users';
+import { fetchUserTimeSpent } from '../../data/Users';
 import { Typography } from '@mui/material';
 
 const UsersTimeSpentChart = () => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUsers } from '../data/Users';
+import { fetchUsers } from '../../data/Users';
 import { AccountCircle } from '@mui/icons-material';
 
 const LatestUserDataTable = () => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import { fetchGoodVsBadLogins } from '../data/Users';
+import { fetchGoodVsBadLogins } from '../../data/Users';
 
 const UsersGoodVsBadChart = () => {
   const [data, setData] = useState([]);

@@ -1,10 +1,10 @@
-import UsersTable from './UsersTable';
+import UsersTable from './Users/UsersTable';
 import React, { useEffect, useState } from 'react';
 import { fetchUserStats } from '../data/Users';
-import UsersLoginChart from './UsersLoginChart';
-import UsersGoodVsBadChart from './UsersGoodVsBadChart';
-import UsersTimeSpentChart from './UserTimeSpent';
-import LatestUserDataTable from './UsersLatesetLogin';
+import UsersLoginChart from './Users/UsersLoginChart';
+import UsersGoodVsBadChart from './Users/UsersGoodVsBadChart';
+import UsersTimeSpentChart from './Users/UserTimeSpent';
+import LatestUserDataTable from './Users/UsersLatesetLogin';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import { LockOpen, Timelapse, Error } from '@mui/icons-material';
 import 'react-grid-layout/css/styles.css';

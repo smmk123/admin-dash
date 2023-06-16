@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AreaChart, Area, ResponsiveContainer } from 'recharts';
-import { fetchUserLogins } from '../data/Users';
+import { fetchUserLogins } from '../../data/Users';
 
 const UsersLoginChart = () => {
   const [userLogins, setUserLogins] = useState([]);
