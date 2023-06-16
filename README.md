@@ -1,6 +1,6 @@
-# Admin Dashboard
+# Admin Dashboard v1.0
 
-This project is an Admin Dashboard for User Management that allows you to view a list of users and their statistics. It provides a user-friendly interface to display user data and key metrics.
+This project is an Admin Dashboard for User Management that allows you to view a list of users and their statistics. It provides a user-friendly interface to display user data and key metrics. The dashboard features resizable and rearrangeable UI elements. The grid settings are saved to local storage and persist after a refresh. There is also a convenient scroll-to-top arrow for mobile devices, making it accessible on phones as well.
 
 ## Features
 
@@ -29,12 +29,9 @@ Note: The project uses a fake backend implementation to simulate fetching user d
 ## Future Enhancements
 
 - Sales Dashboard: Add a sales dashboard to display sales-related metrics and charts.
-- Detailed panels for each statistic: Expand the statistics panels to provide more detailed information and visualizations.
-- Include additional user metrics and charts for data visualization: Add more user-related metrics and charts to provide a comprehensive overview of user activity.
 
 Feel free to contribute to the project by submitting pull requests or suggesting improvements.
 
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
