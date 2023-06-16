@@ -14,9 +14,6 @@ const UsersPage = () => {
   const layout = [
     { i: 'latestUser', x: 0, y: 0, w: 3, h: 2, minH: 2, minW: 3 },
     { i: 'usersLoggingIn', x: 3, y: 0, w: 3, h: 2 },
-    { i: 'kuriboh', x: 2, y: 0, w: 1, h: 1 },
-    { i: 'spell-caster', x: 3, y: 0, w: 1, h: 1 },
-    { i: 'summoned-skull', x: 4, y: 0, w: 1, h: 1 },
   ];
 
   const getLayouts = () => {
